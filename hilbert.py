@@ -24,15 +24,13 @@ def main():
     t.speed(0)
     t.color("blue")
 
-    # Positioning the turtle
     t.penup()
-    t.goto(-200, -40)
+    t.goto(0, 0)
     t.pendown()
 
-    # t.right(10)
-    hilbert_curve(t, 3, 20, 1)
+    hilbert_curve(t, 4, 20, 1)
 
-    # t.hideturtle()
+    t.hideturtle()
     screen.mainloop()
 
 if __name__ == "__main__":
