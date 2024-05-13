@@ -1,20 +1,18 @@
 image = [
-    [1, 1, 1, 1],
-    [1, 1, 0, 1],
-    [1, 0, 0, 1],
-    [1, 1, 1, 1]
+    [2, 2, 2, 2],
+    [2, 2, 0, 2],
+    [2, 0, 0, 2],
+    [2, 2, 2, 2]
 ]
 
-x, y = 1, 2
-new_color = 2
-old_color = image[x][y]
+WHITE, RED, BLUE = 0, 1, 3
 
-stack = [(x, y)]
+stack = [(1, 2)]
 
 while stack:
     r, c = stack.pop(0)
-    if image[r][c] == old_color:
-        image[r][c] = new_color
+    if image[r][c] == WHITE:
+        image[r][c] = RED
 
         stack.append((r + 1, c))
         stack.append((r - 1, c))
