@@ -9,22 +9,19 @@ WHITE, RED, BLUE = 0, 1, 3
 
 stack = [(1, 2)]
 
+def explore(r,c):
+    if image[r][c] == WHITE:
+        stack.append((r, c))
+        image[r][c] = BLUE
+
 while stack:
     r, c = stack.pop(0)
     image[r][c] = RED
-
-    if image[r+1][c] == WHITE:
-        stack.append((r + 1, c))
-        image[r+1][c] = BLUE
-    if image[r-1][c] == WHITE:
-        stack.append((r - 1, c))
-        image[r-1][c] = BLUE
-    if image[r][c+1] == WHITE:
-        stack.append((r, c + 1))
-        image[r][c+1] = BLUE
-    if image[r][c-1] == WHITE:
-        stack.append((r, c - 1))
-        image[r][c-1] = BLUE
+    explore(r+1,c)
+    explore(r-1,c)
+    explore(r,c+1)
+    explore(r,c-1)
 
 for row in image:
     print(row)
+
